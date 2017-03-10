@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="parentTraingle" class="com.nadaf.beans.Traingle" abstract="true">
+        <property name="points" >
+            <list>
+                <ref bean="pointA"/>
+            </list>
+        </property>          
+    </bean>
+    
+    <bean  id="traingle1" class="com.nadaf.beans.Traingle" parent="parentTraingle">
+        <property name="points">
+            <list merge="true">
+                <ref bean="pointB"/>
+            </list>
+        </property>
+    </bean>
+    
+   
+    
+    <bean id="pointA" class="com.nadaf.beans.Point" >
+        <property name="x"  value="0"></property> 
+        <property name="y"  value="0"></property>   
+    </bean>
+    
+    <bean id="pointB"   class="com.nadaf.beans.Point" >  
+        <property name="x"  value="0"></property> 
+        <property name="y"  value="-20"></property>    
+    </bean>
+    
+    <bean id="pointC" class="com.nadaf.beans.Point" >
+        <property name="x"  value="0"></property> 
+        <property name="y"  value="20"></property>      
+    </bean>
+    
+</beans>
+<!--for making the alias for the object-->
