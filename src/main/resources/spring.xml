@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
 "http://www.springframework.org/dtd/spring-beans.dtd">
-<beans>
-    <bean id="parentTraingle" class="com.nadaf.beans.Traingle" abstract="true">
+<!-- If I need this over all the all beans  -->
+<beans default-init-method="myInit" default-destroy-method="myDestroy">
+<!-- If I need to make  init and destroying method in the specific Bean I will make that  -->  
+    <bean id="parentTraingle" class="com.nadaf.beans.Traingle" abstract="true" init-method="myInit" destroy-method="myDestroy">
         <property name="points" >
             <list>
                 <ref bean="pointA"/>
