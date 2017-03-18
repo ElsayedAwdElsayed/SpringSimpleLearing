@@ -23,8 +23,8 @@
    
     
     <bean id="pointA" class="com.nadaf.beans.Point" >
-        <property name="x"  value="0"></property> 
-        <property name="y"  value="0"></property>   
+        <property name="x"  value="${pointA.pointX}"></property> 
+        <property name="y"  value="${pointA.pointY}"></property>   
     </bean>
     
     <bean id="pointB"   class="com.nadaf.beans.Point" >  
@@ -36,7 +36,9 @@
         <property name="x"  value="0"></property> 
         <property name="y"  value="20"></property>      
     </bean>
-    <bean class="com.nadaf.beans.DispalyBeanName" />  <!-- I want to make spring about this class -->
-    
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+    <property name="locations" value="config.properties"/>
+    </bean>
+   
 </beans>
 <!--for making the alias for the object-->
